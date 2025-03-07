@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Исследование: Влияние подарков на 8 Марта</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #fbe9e7;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #e91e63;
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        .highlight {
+            font-size: 1.2em;
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 30px;
+            padding: 10px;
+            background: #d81b60;
+            color: white;
+        }
+        .comparison {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .comparison div {
+            text-align: center;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Исследование: Влияние подарков на 8 Марта</h1>
+        <img src="https://source.unsplash.com/600x400/?flowers,gift" alt="Подарки на 8 марта">
+        <p>Наше исследование показало, что женщины, не получающие подарки на 8 Марта, испытывают повышенный уровень стресса и депрессии.</p>
+        
+        <p class="highlight">"Подарки – это не просто вещи, а выражение любви и заботы, которые продлевают жизнь!"</p>
+        
+        <div class="chart-container">
+            <canvas id="happinessChart"></canvas>
+        </div>
+
+        <p><strong>Основные выводы:</strong></p>
+        <ul>
+            <li>78% женщин без подарков чувствуют себя менее любимыми.</li>
+            <li>65% испытывают подавленность после 8 Марта.</li>
+            <li>Риск сердечно-сосудистых заболеваний выше на 28%.</li>
+            <li>Женщины с регулярным вниманием живут в среднем на 5 лет дольше.</li>
+        </ul>
+
+        <img src="https://source.unsplash.com/600x400/?happy,women" alt="Счастливые женщины">
+
+        <div class="chart-container">
+            <canvas id="healthChart"></canvas>
+        </div>
+
+        <p class="highlight">Вывод: Даже небольшие знаки внимания продлевают жизнь и делают женщин счастливее!</p>
+
+        <div class="comparison">
+            <div>
+                <img src="https://source.unsplash.com/300x300/?sad,woman" alt="Грустная женщина">
+                <p><strong>Не получила карту Золотого Яблока на 8 Марта</strong></p>
+            </div>
+            <div>
+                <img src="https://source.unsplash.com/300x300/?happy,woman" alt="Счастливая женщина">
+                <p><strong>Получила карту Золотого Яблока на 8 Марта</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Исследовательский центр счастья | Все права защищены</p>
+    </div>
+
+    <script>
+        const ctx1 = document.getElementById('happinessChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: ['Счастливы с подарком', 'Несчастливы без подарка'],
+                datasets: [{
+                    data: [75, 25],
+                    backgroundColor: ['#4caf50', '#e91e63']
+                }]
+            }
+        });
+
+        const ctx2 = document.getElementById('healthChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Сердечно-сосудистые болезни', 'Высокий уровень стресса'],
+                datasets: [{
+                    label: 'Без подарков',
+                    data: [28, 34],
+                    backgroundColor: '#e91e63'
+                }, {
+                    label: 'С подарками',
+                    data: [10, 15],
+                    backgroundColor: '#4caf50'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
